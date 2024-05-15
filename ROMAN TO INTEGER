@@ -1,0 +1,12 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        di={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        ans=0
+        prev_value=0
+        for i in reversed(s):
+            if di[i]<prev_value:
+                ans-=di[i]
+            else:
+                ans+=di[i]
+            prev_value=di[i]
+        return ans
