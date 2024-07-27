@@ -16,7 +16,10 @@ class Solution:
             ptr2=ptr2.next.next
         ptr.next=None
         
-        return self.merging(self.sortList(head),self.sortList(ptr1))
+        left=self.sortList(head)
+        right=self.sortList(ptr1)
+        
+        return self.merging(left,right)
     
     def merging(self,list1,list2):
         dummy=ListNode(0)
