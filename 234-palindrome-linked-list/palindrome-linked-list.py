@@ -16,11 +16,11 @@ class Solution:
         # return False
         l=[]
         while head:
-            l.append(head.val)
-            head=head.next
+          l.append(head.val)
+          head=head.next
         left,right=0,len(l)-1
         while left<right and l[left]==l[right]:
-            left+=1
-            right-=1
+          left+=1
+          right-=1
         return left>=right
         
