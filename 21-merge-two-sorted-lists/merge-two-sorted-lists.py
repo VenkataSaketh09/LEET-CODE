@@ -9,24 +9,22 @@ class Solution:
         ptr=dummy
         temp1=list1
         temp2=list2
-        ans=[]
         while temp1 and temp2:
-            if temp1.val<=temp2.val:
-                ptr.next=temp1
-                temp1=temp1.next
-            else:
-                ptr.next=temp2
-                temp2=temp2.next
-            ptr=ptr.next
-        while temp1:
+          if temp1.val<=temp2.val:
             ptr.next=temp1
             temp1=temp1.next
-            ptr=ptr.next
-        while temp2:
+          else:
             ptr.next=temp2
             temp2=temp2.next
-            ptr=ptr.next
+          ptr=ptr.next
+        while temp1:
+          ptr.next=temp1
+          temp1=temp1.next
+          ptr=ptr.next
+        while temp2:
+          ptr.next=temp2
+          temp2=temp2.next
+          ptr=ptr.next
         return dummy.next
-        
 
         
