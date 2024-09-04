@@ -9,7 +9,8 @@ class Solution:
         temp1=headA
         temp2=headB
         while temp1!=temp2:
-            temp1=headB if temp1 is None else temp1.next
-            temp2=headA if temp2 is None else temp2.next
+          temp1=headB if temp1 is None else temp1.next
+          temp2=headA if temp2 is None else temp2.next
         return temp1 or temp2
+
         
