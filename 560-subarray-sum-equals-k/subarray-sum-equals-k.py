@@ -1,12 +1,15 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-      count=0
-      cur_sum=0
-      di={0:1}
-      for i in nums:
-        cur_sum+=i
-        if cur_sum-k in di:
-          count+=di[cur_sum-k]
-        di[cur_sum]=di.get(cur_sum,0)+1
-      return count
+        di={0:1}
+        Sum=0
+        count=0
+        for i in range(len(nums)):
+            Sum+=nums[i]
+            if Sum-k in di:
+                count+=di[Sum-k]
+            if Sum in di:
+                di[Sum]+=1
+            else:
+                di[Sum]=1
+        return count
         
