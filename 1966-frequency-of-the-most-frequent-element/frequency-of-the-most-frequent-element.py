@@ -1,19 +1,18 @@
 class Solution:
     def maxFrequency(self, nums: List[int], k: int) -> int:
-        
-        #the formula is right pointer value*window legth<=total+k
-        #total+k is the availability
         nums.sort()
-        left,right=0,0
-        ans,total=0,0
-        while right<len(nums):
-            total+=nums[right]
-            while nums[right]*(right-left+1)>total+k:
-                total-=nums[left]
-                left+=1
-            ans=max(ans,right-left+1)
-            right+=1
+        Sum=0
+        l=r=0
+        n=len(nums)
+        ans=0
+        while r<n:
+            Sum+=nums[r]
+            while nums[r]*(r-l+1)>Sum+k:
+                Sum-=nums[l]
+                l+=1
+            ans=max(ans,r-l+1)
+            r+=1
         return ans
-            
-            
+
+         
         
