@@ -1,16 +1,12 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        d1={}
-        d2={}
-        if len(s)!=len(t):
-            return 0
+        #for isomorphic we should check injective +surjective(one-one + onto mapping)
+        di1={}
+        di2={}
         for i in range(len(s)):
-            chr1=s[i]
-            chr2=t[i]
-
-            if(chr1 in d1 and d1[chr1]!=chr2) or (chr2 in d2 and d2[chr2]!=chr1):
-                return 0
-            d1[chr1]=chr2
-            d2[chr2]=chr1
-        return 1
-        
+            chr1,chr2=s[i],t[i]
+            if (chr1 in di1 and di1[chr1]!=chr2) or (chr2 in di2 and di2[chr2]!=chr1):
+                return False
+            di1[chr1]=chr2
+            di2[chr2]=chr1
+        return True
