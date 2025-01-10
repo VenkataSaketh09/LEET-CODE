@@ -6,4 +6,6 @@ class Solution:
                 pointer+=1
             nums[pointer]=nums[i]
         return pointer+1
+                
+
         
