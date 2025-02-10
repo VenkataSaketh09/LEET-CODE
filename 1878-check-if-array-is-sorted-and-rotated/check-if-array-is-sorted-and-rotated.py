@@ -1,15 +1,14 @@
 class Solution:
     def check(self, nums: List[int]) -> bool:
-
-        #slice technique
-        i=1
-        while i<len(nums):
-            if nums[i-1]>nums[i]:
+        ptr=0
+        for i in range(len(nums)-1):
+            if nums[i]>nums[i+1]:
                 break
-            i+=1
-        rotated_arr=nums[i:]+nums[:i]
-        for i in range(1,len(nums)):
-            if rotated_arr[i-1]>rotated_arr[i]:
+            ptr+=1
+        temp=nums[ptr+1:]+nums[:ptr+1]
+        for i in range(len(nums)-1):
+            if temp[i]>temp[i+1]:
                 return False
         return True
+
         
