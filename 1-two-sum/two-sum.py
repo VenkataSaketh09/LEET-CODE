@@ -1,12 +1,10 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hash_map={}
-        for index,item in enumerate(nums):
-            complement_value=target-item
-            if complement_value in hash_map:
-                return hash_map[complement_value],index
-            hash_map[item]=index
-        return []
-
+        di={}
+        for i in range(len(nums)):
+            complement=target-nums[i]
+            if complement in di:
+                return [di[complement],i]
+            di[nums[i]]=i
         
         
