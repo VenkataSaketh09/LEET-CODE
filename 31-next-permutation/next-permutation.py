@@ -11,7 +11,6 @@ class Solution:
                 index=i
                 break
         if index==-1:
-            #reverse whole array and it is the answer
             nums.reverse()
         else:
             for i in range(n-1,index,-1):
@@ -19,5 +18,3 @@ class Solution:
                     nums[index],nums[i]=nums[i],nums[index]
                     break
             nums[index+1:]=reversed(nums[index+1:])
-
-        
