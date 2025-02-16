@@ -3,20 +3,20 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        rows=len(matrix)
-        cols=len(matrix[0])
-        row_data=set()
-        col_data=set()
-        for i in range(rows):
-            for j in range(cols):
+        arr1=[]#row number
+        arr2=[]#col number
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
                 if matrix[i][j]==0:
-                    row_data.add(i)
-                    col_data.add(j)
-        for i in row_data:
-            for j in range(cols):
+                    arr1.append(i)
+                    arr2.append(j)
+        for i in arr1:
+            for j in range(len(matrix[0])):
                 matrix[i][j]=0
-        for i in col_data:
-            for j in range(rows):
+        for i in arr2:
+            for j in range(len(matrix)):
                 matrix[j][i]=0
 
+
+        
         
